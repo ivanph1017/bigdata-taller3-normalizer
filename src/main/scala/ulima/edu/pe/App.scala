@@ -65,11 +65,12 @@ import scala.collection.mutable.ArrayBuffer
 
      getSTs() //Delantero */
 
+     val headers = Array()
      var arraybuffer = ArrayBuffer[String]
 
      //Arqueros
      //getGKs()
-
+     
      //Defensas
      arraybuffer.++=(getCBStream().collect()) //Back central
      arraybuffer.++=(getLCBStream().collect()) //Defensa izquierdo
@@ -113,7 +114,7 @@ import scala.collection.mutable.ArrayBuffer
      arraybuffer.++=(getSTStream().collect()) //Delantero
 
      MySparkContext.getSparkContext().parallelize(arraybuffer)
-     .saveAsTextFile("data/resultado/")
+     .saveAsTextFile("data/resultado2/")
    }
 
    def getGKs() {
@@ -134,7 +135,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(43) + "," + fields(44) + "," + fields(45) + ","
                        + fields(46) + "," + fields(47) + "," + fields(48) + ","
                        + fields(49) + "," + fields(50) + "," + fields(51) + ","
-                       + fields(52) ) )
+                       + fields(52) )
    }
 
    def getCBs() {
@@ -156,7 +157,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLCBs() {
@@ -178,7 +179,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRCBs() {
@@ -200,7 +201,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLBs() {
@@ -222,7 +223,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRBs() {
@@ -244,7 +245,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLWBs() {
@@ -266,7 +267,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRWBs() {
@@ -288,7 +289,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getCDMs() {
@@ -310,7 +311,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getCMs() {
@@ -332,7 +333,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getCAMs() {
@@ -354,7 +355,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLAMs() {
@@ -376,7 +377,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRAMs() {
@@ -398,7 +399,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLCMs() {
@@ -420,7 +421,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRCMs() {
@@ -442,7 +443,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLDMs() {
@@ -464,7 +465,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRDMs() {
@@ -486,7 +487,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLMs() {
@@ -508,7 +509,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRMs() {
@@ -530,7 +531,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getCFs() {
@@ -552,7 +553,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLFs() {
@@ -574,7 +575,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRFs() {
@@ -596,7 +597,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLSs() {
@@ -618,7 +619,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRSs() {
@@ -640,7 +641,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getLWs() {
@@ -662,7 +663,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getRWs() {
@@ -684,7 +685,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
    def getSTs() {
@@ -706,7 +707,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
-                     ) )
+                     )
    }
 
  }
