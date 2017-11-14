@@ -14,8 +14,16 @@ import scala.collection.mutable.ArrayBuffer
      return MySparkContext.getSparkContext().textFile("data/FullData.csv")
    }
 
+   def getFileHeader() : RDD[String] = {
+     return MySparkContext.getSparkContext().textFile("data/headers.csv")
+   }
+
    def getSelectablePlayersRDD() : RDD[Array[String]] = {
      return getFile().map( x => x.split(",") )
+   }
+
+   def getHeadersRDD() : RDD[Array[String]] = {
+     return getFileHeader().map( x => x.split(",") )
    }
 
    def main(args : Array[String]) {
@@ -67,10 +75,11 @@ import scala.collection.mutable.ArrayBuffer
 
      val headers = Array()
      var arraybuffer = ArrayBuffer[String]
+     arraybuffer.++=(getHeadersStream().collect())
 
      //Arqueros
      //getGKs()
-     
+
      //Defensas
      arraybuffer.++=(getCBStream().collect()) //Back central
      arraybuffer.++=(getLCBStream().collect()) //Defensa izquierdo
@@ -115,6 +124,25 @@ import scala.collection.mutable.ArrayBuffer
 
      MySparkContext.getSparkContext().parallelize(arraybuffer)
      .saveAsTextFile("data/resultado2/")
+   }
+
+   def getHeadersStream() : RDD[Array[String]] = {
+     getHeadersRDD().filter( fields => fields(15).toUpperCase.contains("GK"))
+             .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+                       + fields(19) + "," + fields(20) + "," + fields(21) + ","
+                       + fields(22) + "," + fields(23) + "," + fields(24) + ","
+                       + fields(25) + "," + fields(26) + "," + fields(27) + ","
+                       + fields(28) + "," + fields(29) + "," + fields(30) + ","
+                       + fields(31) + "," + fields(32) + "," + fields(33) + ","
+                       + fields(34) + "," + fields(35) + "," + fields(36) + ","
+                       + fields(37) + "," + fields(38) + "," + fields(39) + ","
+                       + fields(40) + "," + fields(41) + "," + fields(42) + ","
+                       + fields(43) + "," + fields(44) + "," + fields(45) + ","
+                       + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
+                       //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
+                       //+ fields(52)
+                     )
+
    }
 
    def getGKs() {
