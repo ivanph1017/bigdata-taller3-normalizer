@@ -3,6 +3,7 @@ package ulima.edu.pe
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
+import scala.collection.mutable.ArrayBuffer
 
 /**
  * @author ${user.name}
@@ -19,7 +20,7 @@ import org.apache.spark.rdd.RDD
 
    def main(args : Array[String]) {
 
-     //Arqueros
+/*   //Arqueros
      //getGKs()
 
      //Defensas
@@ -62,7 +63,57 @@ import org.apache.spark.rdd.RDD
      getLWs() //Wing izquierdo
      getRWs() //Wing derecho
 
-     getSTs() //Delantero
+     getSTs() //Delantero */
+
+     var arraybuffer = ArrayBuffer[String]
+
+     //Arqueros
+     //getGKs()
+
+     //Defensas
+     arraybuffer.++=(getCBStream().collect()) //Back central
+     arraybuffer.++=(getLCBStream().collect()) //Defensa izquierdo
+     arraybuffer.++=(getRCBStream().collect()) //Defensa derecho
+
+     arraybuffer.++=(getLBStream().collect()) //Central izquierdo
+     arraybuffer.++=(getRBStream().collect()) //Centras derecho
+
+     arraybuffer.++=(getLWBStream().collect()) //Lateral izquierdo
+     arraybuffer.++=(getRWBStream().collect()) //Lateral derecho
+
+     //Mediocampistas
+     arraybuffer.++=(getCDMStream().collect()) //Mediocampista central defensivo
+     arraybuffer.++=(getCMStream().collect()) //Mediocampista central
+     arraybuffer.++=(getCAMStream().collect()) //Mediocampista central de ataque
+
+     arraybuffer.++=(getLAMStream().collect()) //Mediocampista izquierdo de ataque
+     arraybuffer.++=(getRAMStream().collect()) //Mediocampista derecho de ataque
+
+     arraybuffer.++=(getLCMStream().collect()) //Mediocampista central izquierdo
+     arraybuffer.++=(getRCMStream().collect()) //Mediocampista central derecho
+
+     arraybuffer.++=(getLDMStream().collect()) //Mediocampista defensivo izquierdo
+     arraybuffer.++=(getRDMStream().collect()) //Mediocampista defensivo derecho
+
+     arraybuffer.++=(getLMStream().collect())//Mediocampista izquierdo
+     arraybuffer.++=(getRMStream().collect()) //Mediocampista derecho
+
+     //Delanteros
+     arraybuffer.++=(getCFStream().collect()) //Centrodelantero
+
+     arraybuffer.++=(getLFStream().collect()) //Delantero izquierdo - alero
+     arraybuffer.++=(getRFStream().collect()) //Delantero derecho - alero
+
+     arraybuffer.++=(getLSStream().collect()) //Delantero izquierdo
+     arraybuffer.++=(getRSStream().collect()) //Delantero derecho
+
+     arraybuffer.++=(getLWStream().collect()) //Wing izquierdo
+     arraybuffer.++=(getRWStream().collect()) //Wing derecho
+
+     arraybuffer.++=(getSTStream().collect()) //Delantero
+
+     MySparkContext.getSparkContext().parallelize(arraybuffer)
+     .saveAsTextFile("data/resultado/")
    }
 
    def getGKs() {
