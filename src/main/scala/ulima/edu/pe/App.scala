@@ -39,7 +39,7 @@ import scala.util.Random
      //Mediocampistas
      arraybuffer1.++=(getPositionStream("0", "CDM").collect()) //Mediocampista central defensivo
      arraybuffer1.++=(getPositionStream("0", "CMS").collect()) //Mediocampista central
-     arraybuffer1.++=(getPositionStream("0", "CAM").collect()) //Mediocampista central de ataque
+     arraybuffer1.++=(getPositionStream("1", "CAM").collect()) //Mediocampista central de ataque
 
      arraybuffer1.++=(getPositionStream("1", "LAM").collect()) //Mediocampista izquierdo de ataque
      arraybuffer1.++=(getPositionStream("1", "RAM").collect()) //Mediocampista derecho de ataque
@@ -70,7 +70,7 @@ import scala.util.Random
      arraybuffer1 = Random.shuffle(arraybuffer1)
 
      MySparkContext.getSparkContext().parallelize(arraybuffer1)
-     .saveAsTextFile("data/resultadoConRating1/")
+     .saveAsTextFile("data/resultadoSinRating1/")
 
      var arraybuffer2 = ArrayBuffer[String]()
 
@@ -158,7 +158,7 @@ import scala.util.Random
      arraybuffer2 = Random.shuffle(arraybuffer2)
 
      MySparkContext.getSparkContext().parallelize(arraybuffer2)
-     .saveAsTextFile("data/resultadoConRating2/")
+     .saveAsTextFile("data/resultadoSinRating2/")
    }
 
    def getPositionStream(label : String, position : String) : RDD[String] = {
@@ -174,7 +174,7 @@ import scala.util.Random
                        + fields(37) + "," + fields(38) + "," + fields(39) + ","
                        + fields(40) + "," + fields(41) + "," + fields(42) + ","
                        + fields(43) + "," + fields(44) + "," + fields(45) + ","
-                       + fields(46) + "," + fields(47) + "," + fields(9)
+                       + fields(46) + "," + fields(47) //+ "," + fields(9)
                      )
    }
 
