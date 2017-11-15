@@ -142,6 +142,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
 
    }
@@ -165,7 +166,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(43) + "," + fields(44) + "," + fields(45) + ","
                        + fields(46) + "," + fields(47) + "," + fields(48) + ","
                        + fields(49) + "," + fields(50) + "," + fields(51) + ","
-                       + fields(52) )
+                       + fields(52) + "," + fields(9))
    }
 
    def getCBs() {
@@ -188,6 +189,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -211,6 +213,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -234,6 +237,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -257,6 +261,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -280,6 +285,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -303,6 +309,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -326,6 +333,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -349,6 +357,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -372,6 +381,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -395,6 +405,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -418,6 +429,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -441,6 +453,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -464,6 +477,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -487,6 +501,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -510,6 +525,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -533,6 +549,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -556,6 +573,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -579,6 +597,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -602,6 +621,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -625,6 +645,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -648,6 +669,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -671,6 +693,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -694,6 +717,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -717,6 +741,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -740,6 +765,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
@@ -763,6 +789,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(46) + "," + fields(47) //+ "," + fields(48) + ","
                        //+ fields(49) + "," + fields(50) + "," + fields(51) + ","
                        //+ fields(52)
+                       + "," + fields(9)
                      )
    }
 
