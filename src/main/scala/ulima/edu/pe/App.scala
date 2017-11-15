@@ -74,7 +74,7 @@ import scala.collection.mutable.ArrayBuffer
      getSTs() //Delantero */
 
      val headers = Array()
-     var arraybuffer = ArrayBuffer[String]
+     var arraybuffer = ArrayBuffer[String]()
      arraybuffer.++=(getHeadersStream().collect())
 
      //Arqueros
@@ -126,9 +126,10 @@ import scala.collection.mutable.ArrayBuffer
      .saveAsTextFile("data/resultado2/")
    }
 
-   def getHeadersStream() : RDD[Array[String]] = {
-     getHeadersRDD().filter( fields => fields(15).toUpperCase.contains("GK"))
-             .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+   def getHeadersStream() : RDD[String] = {
+     getHeadersRDD()
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -149,9 +150,10 @@ import scala.collection.mutable.ArrayBuffer
      getGKStream().saveAsTextFile("data/resultadoGK/") //folder donde se guarda data/resultado##
    }
 
-   def getGKStream() : RDD[Array[String]] = {
+   def getGKStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("GK"))
-             .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -170,9 +172,10 @@ import scala.collection.mutable.ArrayBuffer
      getCBStream().saveAsTextFile("data/resultadoCB/") //folder donde se guarda data/resultado##
    }
 
-   def getCBStream() : RDD[Array[String]] = {
+   def getCBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("CB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -192,9 +195,10 @@ import scala.collection.mutable.ArrayBuffer
      getLCBStream.saveAsTextFile("data/resultadoLCB/") //folder donde se guarda data/resultado##
    }
 
-   def getLCBStream() : RDD[Array[String]] = {
+   def getLCBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LCB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -214,9 +218,10 @@ import scala.collection.mutable.ArrayBuffer
      getRCBStream.saveAsTextFile("data/resultadoRCB/") //folder donde se guarda data/resultado##
    }
 
-   def getRCBStream() : RDD[Array[String]] = {
+   def getRCBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RCB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -236,9 +241,10 @@ import scala.collection.mutable.ArrayBuffer
      getLBStream.saveAsTextFile("data/resultadoLB/") //folder donde se guarda data/resultado##
    }
 
-   def getLBStream() : RDD[Array[String]] = {
+   def getLBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -258,9 +264,10 @@ import scala.collection.mutable.ArrayBuffer
      getRBStream.saveAsTextFile("data/resultadoRB/") //folder donde se guarda data/resultado##
    }
 
-   def getRBStream() : RDD[Array[String]] = {
+   def getRBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -280,9 +287,10 @@ import scala.collection.mutable.ArrayBuffer
      getLWBStream.saveAsTextFile("data/resultadoLWB/") //folder donde se guarda data/resultado##
    }
 
-   def getLWBStream() : RDD[Array[String]] = {
+   def getLWBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LWB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -302,9 +310,10 @@ import scala.collection.mutable.ArrayBuffer
      getRWBStream.saveAsTextFile("data/resultadoRWB/") //folder donde se guarda data/resultado##
    }
 
-   def getRWBStream() : RDD[Array[String]] = {
+   def getRWBStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RWB"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -324,9 +333,10 @@ import scala.collection.mutable.ArrayBuffer
      getCDMStream().saveAsTextFile("data/resultadoCDM/") //folder donde se guarda data/resultado##
    }
 
-   def getCDMStream() : RDD[Array[String]] = {
+   def getCDMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("CDM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -346,9 +356,10 @@ import scala.collection.mutable.ArrayBuffer
      getCMStream.saveAsTextFile("data/resultadoCM/") //folder donde se guarda data/resultado##
    }
 
-   def getCMStream() : RDD[Array[String]] = {
+   def getCMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("CM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -368,9 +379,10 @@ import scala.collection.mutable.ArrayBuffer
      getCAMStream().saveAsTextFile("data/resultadoCAM/") //folder donde se guarda data/resultado##
    }
 
-   def getCAMStream() : RDD[Array[String]] = {
+   def getCAMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("CAM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -390,9 +402,10 @@ import scala.collection.mutable.ArrayBuffer
      getLAMStream.saveAsTextFile("data/resultadoLAM/") //folder donde se guarda data/resultado##
    }
 
-   def getLAMStream() : RDD[Array[String]] = {
+   def getLAMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LAM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -412,9 +425,10 @@ import scala.collection.mutable.ArrayBuffer
      getRAMStream.saveAsTextFile("data/resultadoRAM/") //folder donde se guarda data/resultado##
    }
 
-   def getRAMStream() : RDD[Array[String]] = {
+   def getRAMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RAM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -434,9 +448,10 @@ import scala.collection.mutable.ArrayBuffer
      getLCMStream.saveAsTextFile("data/resultadoLCM/") //folder donde se guarda data/resultado##
    }
 
-   def getLCMStream() : RDD[Array[String]] = {
+   def getLCMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LCM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -456,9 +471,10 @@ import scala.collection.mutable.ArrayBuffer
      getRCMStream.saveAsTextFile("data/resultadoRCM/") //folder donde se guarda data/resultado##
    }
 
-   def getRCMStream() : RDD[Array[String]] = {
+   def getRCMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RCM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -478,9 +494,10 @@ import scala.collection.mutable.ArrayBuffer
      getLDMStream.saveAsTextFile("data/resultadoLDM/") //folder donde se guarda data/resultado##
    }
 
-   def getLDMStream() : RDD[Array[String]] = {
+   def getLDMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LDM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -500,9 +517,10 @@ import scala.collection.mutable.ArrayBuffer
      getRDMStream.saveAsTextFile("data/resultadoRDM/") //folder donde se guarda data/resultado##
    }
 
-   def getRDMStream() : RDD[Array[String]] = {
+   def getRDMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RDM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -522,9 +540,10 @@ import scala.collection.mutable.ArrayBuffer
      getLMStream.saveAsTextFile("data/resultadoLM/") //folder donde se guarda data/resultado##
    }
 
-   def getLMStream() : RDD[Array[String]] = {
+   def getLMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -544,9 +563,10 @@ import scala.collection.mutable.ArrayBuffer
      getRMStream.saveAsTextFile("data/resultadoRM/") //folder donde se guarda data/resultado##
    }
 
-   def getRMStream() : RDD[Array[String]] = {
+   def getRMStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RM"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -566,9 +586,10 @@ import scala.collection.mutable.ArrayBuffer
      getCFStream().saveAsTextFile("data/resultadoCF/") //folder donde se guarda data/resultado##
    }
 
-   def getCFStream() : RDD[Array[String]] = {
+   def getCFStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("CF"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -588,9 +609,10 @@ import scala.collection.mutable.ArrayBuffer
      getLFStream.saveAsTextFile("data/resultadoLF/") //folder donde se guarda data/resultado##
    }
 
-   def getLFStream() : RDD[Array[String]] = {
+   def getLFStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LF"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -610,9 +632,10 @@ import scala.collection.mutable.ArrayBuffer
      getRFStream.saveAsTextFile("data/resultadoRF/") //folder donde se guarda data/resultado##
    }
 
-   def getRFStream() : RDD[Array[String]] = {
+   def getRFStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RF"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -632,9 +655,10 @@ import scala.collection.mutable.ArrayBuffer
      getLSStream.saveAsTextFile("data/resultadoLS/") //folder donde se guarda data/resultado##
    }
 
-   def getLSStream() : RDD[Array[String]] = {
+   def getLSStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LS"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -654,9 +678,10 @@ import scala.collection.mutable.ArrayBuffer
      getRSStream.saveAsTextFile("data/resultadoRS/") //folder donde se guarda data/resultado##
    }
 
-   def getRSStream() : RDD[Array[String]] = {
+   def getRSStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RS"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -676,9 +701,10 @@ import scala.collection.mutable.ArrayBuffer
      getLWStream.saveAsTextFile("data/resultadoLW/") //folder donde se guarda data/resultado##
    }
 
-   def getLWStream() : RDD[Array[String]] = {
+   def getLWStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("LW"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -698,9 +724,10 @@ import scala.collection.mutable.ArrayBuffer
      getRWStream.saveAsTextFile("data/resultadoRW/") //folder donde se guarda data/resultado##
    }
 
-   def getRWStream() : RDD[Array[String]] = {
+   def getRWStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("RW"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
@@ -720,9 +747,10 @@ import scala.collection.mutable.ArrayBuffer
      getSTStream().saveAsTextFile("data/resultadoST/") //folder donde se guarda data/resultado##
    }
 
-   def getSTStream() : RDD[Array[String]] = {
+   def getSTStream() : RDD[String] = {
      getSelectablePlayersRDD().filter( fields => fields(15).toUpperCase.contains("ST"))
-            .map( fields => fields(15), fields(17) + "," + fields(18) + ","
+     .map( fields => fields(0) + ","
+                       + fields(15) + "," + fields(17) + "," + fields(18) + ","
                        + fields(19) + "," + fields(20) + "," + fields(21) + ","
                        + fields(22) + "," + fields(23) + "," + fields(24) + ","
                        + fields(25) + "," + fields(26) + "," + fields(27) + ","
