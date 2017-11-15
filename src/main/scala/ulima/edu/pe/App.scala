@@ -4,7 +4,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import scala.collection.mutable.ArrayBuffer
-
+import scala.util.Random
 /**
  * @author ${user.name}
  */
@@ -67,8 +67,10 @@ import scala.collection.mutable.ArrayBuffer
 
      arraybuffer1.++=(getPositionStream("1", "ST").collect()) //Delantero
 
+     arraybuffer1 = Random.shuffle(arraybuffer1)
+
      MySparkContext.getSparkContext().parallelize(arraybuffer1)
-     .saveAsTextFile("data/resultado3/")
+     .saveAsTextFile("data/resultadoConRating1/")
 
      var arraybuffer2 = ArrayBuffer[String]()
 
@@ -153,8 +155,10 @@ import scala.collection.mutable.ArrayBuffer
 
      arraybuffer2.++=(getPositionStream("25", "ST").collect()) //Delantero
 
+     arraybuffer2 = Random.shuffle(arraybuffer2)
+
      MySparkContext.getSparkContext().parallelize(arraybuffer2)
-     .saveAsTextFile("data/resultado4/")
+     .saveAsTextFile("data/resultadoConRating2/")
    }
 
    def getPositionStream(label : String, position : String) : RDD[String] = {
@@ -170,7 +174,7 @@ import scala.collection.mutable.ArrayBuffer
                        + fields(37) + "," + fields(38) + "," + fields(39) + ","
                        + fields(40) + "," + fields(41) + "," + fields(42) + ","
                        + fields(43) + "," + fields(44) + "," + fields(45) + ","
-                       + fields(46) + "," + fields(47) //+ "," + fields(9)
+                       + fields(46) + "," + fields(47) + "," + fields(9)
                      )
    }
 
